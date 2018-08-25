@@ -16,4 +16,17 @@ class Question extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
+    // when search by api dont' use id use slug instead
+    public function getRouteKeyName(){
+        return 'slug';
+    }
+
+    // path
+    public function getPathAttribute(){
+        return asset("api/question/$this->slug");
+    }
+
+    // protected $fillable = ['title','slug','body','category_id','user_id'];
+    protected $guarded = [];
+
 }

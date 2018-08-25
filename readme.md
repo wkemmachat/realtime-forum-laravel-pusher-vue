@@ -33,4 +33,20 @@ php artisan db:seed
 
 
 
+#Create API -> routes/api
+Route::apiResource('/question','QuestionController@index');
+
+php artisan route:list
+
+
+
+#Create slug in model .php
+this way we can pass slug in url not the id in url
+
+#Create Resource --> filter some data and send to api
+php artisan make:resource QuestionResource
+
+
+
+
 
