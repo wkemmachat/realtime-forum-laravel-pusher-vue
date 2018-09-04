@@ -46,6 +46,20 @@ this way we can pass slug in url not the id in url
 #Create Resource --> filter some data and send to api
 php artisan make:resource QuestionResource
 
+php artisan make:resource CategoryResource
+php artisan make:resource ReplyResource
+
+#install jwt and config
+
+make auth controller
+
+php artisan make:controller AuthController
+
+#install vuetify
+
+
+
+#
 
 
 
