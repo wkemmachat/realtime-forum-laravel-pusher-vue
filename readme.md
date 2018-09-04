@@ -55,6 +55,9 @@ make auth controller
 
 php artisan make:controller AuthController
 
+#create new middleware instead of api/auth
+php artisan make:middleware JWT
+
 #install vuetify
 
 

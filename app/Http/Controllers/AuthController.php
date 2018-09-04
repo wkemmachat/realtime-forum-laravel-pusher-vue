@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class AuthController extends Controller
 {
@@ -13,7 +14,8 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('JWT', ['except' => ['login','signup']]);
+        // $this->middleware('JWT');
     }
 
     /**
@@ -79,4 +81,13 @@ class AuthController extends Controller
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
     }
+
+
+    public function signup(Request $request)
+    {
+        // $request->password = bcrypt($request->password);
+        User::create($request->all());
+        return $this->login($request);
+    }
+
 }
