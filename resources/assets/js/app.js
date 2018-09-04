@@ -15,8 +15,15 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+
+Vue.use(Vuetify)
+
+Vue.component('AppHome', require('./components/AppHome.vue'));
+import router from './Router/router.js'
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router
 });
